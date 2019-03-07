@@ -1,0 +1,16 @@
+contents = message.content.split(" ") #contents is a list type
+    for word in contents:
+        if word.upper() in chat_filter:
+            if not message.author.roles in bypass_list:
+                try:
+                    await client.delete_message(message)
+                    await client.send_message(message.channel, "**Oi! No swearing here**")
+                except discord.errors.NotFound:
+                    return
+
+if message.author.id == "429951935727009792":
+            await client.delete_message(message)
+            print("Muted")
+    if message.author.id == "268087923751124992":
+            await client.delete_message(message)
+            print("Muted") 
